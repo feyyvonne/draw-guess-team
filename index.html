@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Draw Guess Team</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="7" y="9" width="38" height="46" rx="10"></rect>
+            <path d="M20 24h13M20 34h20M20 44h12"></path>
+            <path d="M43 16l9 9-20 20-11 3 3-11z"></path>
+          </svg>
+          <div>
+            <p class="eyebrow">Virtual team building</p>
+            <h1>Draw Guess Team</h1>
+          </div>
+        </div>
+        <div class="round-pill">
+          <span>Round</span>
+          <strong id="roundNumber">0</strong>
+        </div>
+      </header>
+
+      <section class="game-layout" aria-label="Game workspace">
+        <aside class="panel round-panel" aria-label="Round controls">
+          <div class="prompt-card">
+            <span class="label">Prompt</span>
+            <h2 id="promptText">Press Start Round</h2>
+            <button class="ghost-button" id="revealButton" type="button">Reveal answer</button>
+          </div>
+
+          <div class="timer-card">
+            <div>
+              <span class="label">Timer</span>
+              <strong id="timerText">01:30</strong>
+            </div>
+            <div class="timer-actions">
+              <button id="startRoundButton" type="button">Start round</button>
+              <button class="secondary-button" id="pauseTimerButton" type="button">Pause</button>
+              <button class="secondary-button" id="resetTimerButton" type="button">Reset</button>
+            </div>
+          </div>
+
+          <form class="compact-form" id="guessForm">
+            <label for="guessInput">Team guesses</label>
+            <div class="input-row">
+              <input id="guessInput" type="text" autocomplete="off" placeholder="Type a guess">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+
+          <div class="guess-log">
+            <div class="section-title">
+              <h2>Guess log</h2>
+              <button class="link-button" id="clearGuessesButton" type="button">Clear</button>
+            </div>
+            <ol id="guessList" aria-live="polite"></ol>
+          </div>
+        </aside>
+
+        <section class="canvas-stage" aria-label="Drawing board">
+          <div class="toolstrip" aria-label="Drawing tools">
+            <button class="tool-button active" id="penTool" type="button" aria-pressed="true">Pen</button>
+            <button class="tool-button" id="eraserTool" type="button" aria-pressed="false">Eraser</button>
+            <label class="range-control" for="brushSize">
+              Size
+              <input id="brushSize" type="range" min="2" max="34" value="8">
+            </label>
+            <div class="swatches" aria-label="Color swatches">
+              <button class="swatch active" type="button" data-color="#1f2937" aria-label="Charcoal"></button>
+              <button class="swatch" type="button" data-color="#e11d48" aria-label="Rose"></button>
+              <button class="swatch" type="button" data-color="#f59e0b" aria-label="Amber"></button>
+              <button class="swatch" type="button" data-color="#10b981" aria-label="Green"></button>
+              <button class="swatch" type="button" data-color="#2563eb" aria-label="Blue"></button>
+              <button class="swatch" type="button" data-color="#7c3aed" aria-label="Violet"></button>
+            </div>
+            <button class="secondary-button" id="undoButton" type="button">Undo</button>
+            <button class="secondary-button" id="clearCanvasButton" type="button">Clear</button>
+            <button class="secondary-button" id="saveCanvasButton" type="button">Save</button>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="drawingCanvas" width="1200" height="760" aria-label="Drawing canvas"></canvas>
+          </div>
+        </section>
+
+        <aside class="panel score-panel" aria-label="Scoreboard">
+          <div class="section-title">
+            <h2>Scoreboard</h2>
+            <button class="link-button" id="resetScoresButton" type="button">Reset</button>
+          </div>
+          <form class="compact-form" id="playerForm">
+            <label for="playerInput">Add player or team</label>
+            <div class="input-row">
+              <input id="playerInput" type="text" autocomplete="off" placeholder="Name">
+              <button type="submit">Add</button>
+            </div>
+          </form>
+          <ul id="scoreList" class="score-list"></ul>
+          <div class="round-history">
+            <h2>Round history</h2>
+            <ul id="historyList"></ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
