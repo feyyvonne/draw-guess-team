@@ -18,6 +18,7 @@ Open `index.html` in a browser. No install, build step, server, account, or exte
 ## GitHub
 
 Repository: https://github.com/feyyvonne/draw-guess-team
+GitHub Pages: https://feyyvonne.github.io/draw-guess-team/
 
 ```sh
 git remote add origin https://github.com/feyyvonne/draw-guess-team.git
