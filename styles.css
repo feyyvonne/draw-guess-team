@@ -60,6 +60,42 @@ button {
   padding: 16px 18px;
 }
 
+.room-bar {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(219, 228, 238, 0.95);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: minmax(220px, 1fr) minmax(340px, 1.5fr);
+  padding: 14px 16px;
+}
+
+.room-bar strong {
+  display: block;
+  font-size: 1.15rem;
+}
+
+.room-bar p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.35;
+  margin-top: 4px;
+}
+
+.room-form {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.room-form input {
+  flex: 1 1 140px;
+}
+
 .brand {
   align-items: center;
   display: flex;
@@ -446,6 +482,18 @@ canvas {
   .topbar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .room-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .room-form {
+    justify-content: stretch;
+  }
+
+  .room-form button {
+    flex: 1 1 auto;
   }
 
   .round-panel,

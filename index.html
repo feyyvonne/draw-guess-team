@@ -26,6 +26,21 @@
         </div>
       </header>
 
+      <section class="room-bar" aria-label="Remote room controls">
+        <div>
+          <span class="label">Remote room</span>
+          <strong id="roomStatus">Local mode</strong>
+          <p id="roomHint">Add Firebase config, then create or join a room to play together.</p>
+        </div>
+        <form class="room-form" id="roomForm">
+          <input id="playerNameInput" type="text" autocomplete="name" placeholder="Your name" aria-label="Your name">
+          <input id="roomCodeInput" type="text" autocomplete="off" placeholder="Room code" aria-label="Room code">
+          <button id="createRoomButton" type="button">Create room</button>
+          <button class="secondary-button" id="joinRoomButton" type="submit">Join</button>
+          <button class="link-button" id="leaveRoomButton" type="button">Leave</button>
+        </form>
+      </section>
+
       <section class="game-layout" aria-label="Game workspace">
         <aside class="panel round-panel" aria-label="Round controls">
           <div class="prompt-card">
@@ -108,6 +123,6 @@
         </aside>
       </section>
     </main>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
